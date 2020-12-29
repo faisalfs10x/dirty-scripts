@@ -2,10 +2,16 @@
 # Download all the vpn config at https://downloads.nordcdn.com/configs/archives/servers/ovpn.zip
 # https://github.com/faisalfs10x
 
+echo -e "     \e[93mhello $USER@$HOSTNAME:- ";
+echo -e "  \e[92mNordvpn";
+echo -e "  \e[92mHttps://github.com/faisalfs10x";
+date +"%A, %b %d, %Y %I:%M %p"
+echo -e "\e[0m"
+
 usage()
 {
 cat << EOF
-usage: bash ./nordvpn.sh -c my
+usage: bash nordvpn.sh -c my
 -c    | --country_name      (Required)            Randomly pick specific country
 -a    | --random_all        (master)              Randomly pick country
 -l    | --list_country				  List available country
@@ -13,11 +19,6 @@ usage: bash ./nordvpn.sh -c my
 EOF
 }
 
-echo -e "     \e[93mhello $USER@$HOSTNAME:- ";
-echo -e "  \e[92mNordvpn";
-echo -e "  \e[92mHttps://github.com/faisalfs10x";
-date +"%A, %b %d, %Y %I:%M %p"
-echo -e "\e[0m"
 
 country_name=
 random_all=master # default value
@@ -78,22 +79,27 @@ while [ "$1" != "" ]; do
             exit
         ;;
         * )              usage
-            exit 1
+            exit 3
     esac
     shift
 done
 
 # randomize_all
-if [ -z $random_all ]; then
+if [[ -z $random_all ]]; then
     echo "Ok Random all" 
     randomize_all
     exit
-fi
 
-if [ -z $list_country ]; then
-    echo "List Available Country" 
-    view_country
+
+elif [[ -n $country_name ]]; then
+    echo "Randomly pick specific country" 
+    random_country 
     exit
+
+elif [[ $list_country == $list_country ]]; then
+    echo "List Available Country" 
+    view_country 
+    exit
+
 fi
 
-random_country
