@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# Download all the vpn config at https://downloads.nordcdn.com/configs/archives/servers/ovpn.zip
 
 usage()
 {
@@ -53,15 +53,11 @@ echo
 
 }
 
-
-
 which openvpn &> /dev/null
 if [ $? != 0 ]; then
     echo \"openvpn\" takde dlm PATH
     exit 2
 fi
-
-
 
 while [ "$1" != "" ]; do
     case $1 in
@@ -85,7 +81,6 @@ while [ "$1" != "" ]; do
     esac
     shift
 done
-
 
 # randomize_all
 if [ -z $random_all ]; then
