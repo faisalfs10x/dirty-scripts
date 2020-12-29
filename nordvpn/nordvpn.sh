@@ -3,9 +3,9 @@
 # https://github.com/faisalfs10x
 
 echo -e "     \e[93mhello $USER@$HOSTNAME:- ";
-echo -e "  \e[92mNordvpn";
-echo -e "  \e[92mHttps://github.com/faisalfs10x";
-date +"%A, %b %d, %Y %I:%M %p"
+echo -e "  	    \e[92mNordvpn";
+echo -e "  \e[92mhttps://github.com/faisalfs10x";
+date +"  %A, %b %d, %Y %I:%M %p"
 echo -e "\e[0m"
 
 usage()
@@ -30,8 +30,8 @@ randomize_all(){
 
 pickrandom=$(ls -1 $file | shuf -n 1)
 echo 
-echo "connect to "$pickrandom
-echo
+echo -e "\e[93mconnecting to: $pickrandom";
+echo -e "\e[0m"
 cd $file && openvpn $pickrandom
 
 }
@@ -40,8 +40,8 @@ random_country(){
 
 cn=$(ls -1 $file | grep $cntry | shuf -n 1) 
 echo 
-echo "randomly connect to specific "$cn
-echo
+echo -e "\e[93mrandomly connecting to specific: $cn";
+echo -e "\e[0m"
 cd $file && openvpn $cn
 
 }
@@ -97,9 +97,10 @@ elif [[ -n $country_name ]]; then
     exit
 
 elif [[ $list_country == $list_country ]]; then
-    echo "List Available Country" 
+    echo "List of Available Country" 
     view_country 
     exit
 
 fi
 
+#random_country
