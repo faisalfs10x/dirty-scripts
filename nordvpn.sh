@@ -1,5 +1,6 @@
 #!/bin/bash
 # Download all the vpn config at https://downloads.nordcdn.com/configs/archives/servers/ovpn.zip
+# https://github.com/faisalfs10x
 
 usage()
 {
