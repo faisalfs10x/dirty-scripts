@@ -1,5 +1,6 @@
 #!/bin/bash
 # https://github.com/faisalfs10x
+# 07-JAN-2020
 
 echo
 echo "DNS Amplification Attack test via openresolver"
