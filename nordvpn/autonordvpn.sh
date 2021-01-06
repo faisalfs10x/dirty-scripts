@@ -11,7 +11,7 @@ echo -e "\e[0m"
 usage()
 {
 cat << EOF
-usage: bash nordvpn.sh -c my
+usage: bash autonordvpn.sh -c my
 -c    | --country_name      (Required)            Randomly pick specific country
 -a    | --random_all        (master)              Randomly pick country
 -l    | --list_country				  List available country
