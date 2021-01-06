@@ -103,4 +103,4 @@ elif [[ $list_country == $list_country ]]; then
     exit
 
 fi
-#random_country
+#random_country.
