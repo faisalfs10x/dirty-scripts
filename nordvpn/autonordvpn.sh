@@ -1,6 +1,8 @@
 #!/bin/bash
 # Download all the vpn config at https://downloads.nordcdn.com/configs/archives/servers/ovpn.zip
+# Randomize pick vpn config in ovpn_tcp folder every time invoking script.
 # https://github.com/faisalfs10x
+# 29/12/2020
 
 echo -e "     \e[93mhello $USER@$HOSTNAME:- ";
 echo -e "  	    \e[92mNordvpn";
@@ -18,7 +20,6 @@ usage: bash autonordvpn.sh -c my
 -h    | --help                                    Menu
 EOF
 }
-
 
 country_name=
 random_all=master # default value
@@ -102,5 +103,4 @@ elif [[ $list_country == $list_country ]]; then
     exit
 
 fi
-
 #random_country
